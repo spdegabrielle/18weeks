@@ -5,18 +5,7 @@
          (prefix-in srfi/19: srfi/19)
          "cal.rkt")
 
-;(define month-names '["January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December"])
-;
-;(define (leapyear? y)
-;  (or (and (= (modulo y 100) 0) (not (= (modulo y 400) 0))) ; not leap
-;      (= (modulo y 4) 0)))
-;
-;(define (days-in-month m y) 
-;  (case m 
-;  [(4 6 9 11)   30]
-;  [(2) (if (leapyear? y) 29 28)]
-;  [else 31]
-;  ))
+
 (define m 1)
 (define y 2014)
 (define d 15)
