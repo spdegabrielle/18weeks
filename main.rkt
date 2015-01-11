@@ -3,9 +3,10 @@
 ;; (c) 2015 K. Shah & S. De Gabrielle
 (require racket/date
          (prefix-in srfi/19: srfi/19)
-         "cal.rkt")
+         "cal.rkt"
+         table-panel)
 
-
+;(new table-panel%)
 (define m 1)
 (define y 2014)
 (define d 15)

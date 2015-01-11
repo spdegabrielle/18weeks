@@ -1,12 +1,12 @@
 #lang racket/base
 ;Babwani’s Algorithm to find the day of the week.
 ; from http://www.babwani-congruence.blogspot.co.uk/
-(provide Babwani’s-Algorithm)
-
-(define (Babwani’s-Algorithm d month year)
-  (define (leapyear? y)
+(provide Babwani’s-Algorithm leapyear?)
+(define (leapyear? y)
     (or (and (= (modulo y 100) 0) (not (= (modulo y 400) 0))) ; not leap
         (= (modulo y 4) 0)))
+(define (Babwani’s-Algorithm d month year)
+  
   
   (define (century-num y) (quotient y 100))
   
@@ -30,7 +30,8 @@
 ; if dayn=5; day= Thursday 
 ; if dayn=6; day= Friday
   
-  daynum)
+  (inexact->exact (truncate daynum)))
 ;; test
-(= (Babwani’s-Algorithm 4 1 1970) 1.0)
-(= (Babwani’s-Algorithm 15 1 1986) 4.0)
+(= (Babwani’s-Algorithm 4 1 1970) 1) ; t
+(= (Babwani’s-Algorithm 15 1 1986) 4) ; t
+(newline)
